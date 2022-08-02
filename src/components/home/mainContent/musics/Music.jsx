@@ -1,7 +1,8 @@
 import React from "react"
 import "./music.css"
 import Slider from "react-slick"
-import Heading from "../../../common/heading/Heading"
+import Label from "../../../atoms/Label"
+
 import { popular } from "../../../../dummyData"
 
 const Music = () => {
@@ -18,7 +19,7 @@ const Music = () => {
   return (
     <>
       <section className='music'>
-        <Heading title='Music News' />
+        <Label title='Music News' />
         <div className='content'>
           <Slider {...settings}>
             {popular

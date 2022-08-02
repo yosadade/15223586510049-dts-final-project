@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import { hero } from "../../dummyData"
 import "./styles.css"
-import Card from "../Card"
+import Card from "../atoms/Card"
 
 const Hero = () => {
   const [items, setIems] = useState(hero)

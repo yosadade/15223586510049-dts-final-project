@@ -1,6 +1,6 @@
 import React from "react"
 import { discover } from "../../dummyData"
-import Heading from "../common/heading/Heading"
+import Label from '../atoms/Label'
 import "./styles.css"
 
 const Discover = () => {
@@ -8,7 +8,7 @@ const Discover = () => {
     <>
       <section className='discover'>
         <div className='container'>
-          <Heading title='Discover' />
+          <Label title='Discover' />
           <div className='content'>
             {discover.map((val) => {
               return (
