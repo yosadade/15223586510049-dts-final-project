@@ -1,6 +1,6 @@
 import React from "react"
-import { discover } from "../../dummyData"
-import Label from '../atoms/Label'
+import { discover } from "../../../dummyData"
+import Label from '../../atoms/Label'
 import "./styles.css"
 
 const Discover = () => {
