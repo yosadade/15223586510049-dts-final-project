@@ -1,7 +1,7 @@
 import React from "react"
-import { discover } from "../../../dummyData"
-import Heading from "../../common/heading/Heading"
-import "./style.css"
+import { discover } from "../../dummyData"
+import Heading from "../common/heading/Heading"
+import "./styles.css"
 
 const Discover = () => {
   return (

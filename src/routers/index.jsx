@@ -1,5 +1,5 @@
 import React from "react";
-import Homepages from "../components/home/Homepages";
+import Home from "../pages/Home";
 import Footer from "../components/common/footer/Footer";
 import { BrowserRouter as Routes, Route } from "react-router-dom";
 import Navbar from "../components/Navbar";
@@ -12,7 +12,7 @@ const Routers = () => {
         <Head />
         <Navbar />
         {/* <Header /> */}
-        <Homepages />
+        <Home />
         {/* <Route path="/" component={Homepages} />
         <Route path="/singlepage/:id" exact component={SinglePage} />
         <Route path="/culture" component={Culture} /> */}
