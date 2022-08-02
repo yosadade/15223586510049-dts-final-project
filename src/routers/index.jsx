@@ -2,8 +2,8 @@ import React from "react";
 import Home from "../pages/Home";
 import Footer from "../components/common/footer/Footer";
 import { BrowserRouter as Routes, Route } from "react-router-dom";
-import Navbar from "../components/Navbar";
-import Head from "../components/Head";
+import Navbar from "../components/moleculs/Navbar";
+import Head from "../components/moleculs/Head";
 
 const Routers = () => {
   return (
