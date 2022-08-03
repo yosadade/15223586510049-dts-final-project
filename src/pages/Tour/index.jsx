@@ -7,7 +7,7 @@ import Ppost from "../../components/home/mainContent/Ppost/Ppost";
 
 import "./styles.css";
 
-const Home = () => {
+const Tour = () => {
   return (
     <>
       <Hero />
@@ -23,4 +23,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Tour;

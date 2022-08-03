@@ -18,22 +18,13 @@ const Navbar = () => {
                 <Link to="/">Home</Link>
               </li>
               <li>
-                <Link to="/culture">Culture</Link>
+                <Link to="/culinary">Kuliner</Link>
               </li>
               <li>
-                <Link to="/politics">Politics</Link>
+                <Link to="/tour">Wisata</Link>
               </li>
               <li>
-                <Link to="/memes">Memes</Link>
-              </li>
-              <li>
-                <Link to="/sports">Sports</Link>
-              </li>
-              <li>
-                <Link to="/boxed">Boxed</Link>
-              </li>
-              <li>
-                <Link to="/reviews">Reviews</Link>
+                <Link to="/sport">Olahraga</Link>
               </li>
             </ul>
             <button className="barIcon" onClick={() => setNavbar(!navbar)}>

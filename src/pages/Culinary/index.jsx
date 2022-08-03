@@ -1,5 +1,5 @@
 import React from "react";
-import Hero from "../../components/moleculs/Hero";
+
 import Life from "../../components/home/mainContent/life/Life";
 import Music from "../../components/home/mainContent/musics/Music";
 import Popular from "../../components/home/mainContent/popular/Popular";
@@ -7,20 +7,18 @@ import Ppost from "../../components/home/mainContent/Ppost/Ppost";
 
 import "./styles.css";
 
-const Home = () => {
+const Culinary = () => {
   return (
     <>
-      <Hero />
       <div className="container">
         <section className="mainContent">
-          <Popular />
           <Ppost />
+          <Popular />
           <Life />
-          <Music />
         </section>
       </div>
     </>
   );
 };
 
-export default Home;
+export default Culinary;

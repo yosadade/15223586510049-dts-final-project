@@ -37,7 +37,7 @@ const Popular = () => {
           <Slider {...settings}>
             {popular.map((val) => {
               return (
-                <div className='items'>
+                <div className='items' onClick={() => console.log(val)}>
                   <div className='box shadow'>
                     <div className='images row'>
                       <div className='img'>
