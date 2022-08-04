@@ -41,7 +41,7 @@ const Popular = ({category, label, sub = 'terbaru'}) => {
         console.log(fetchData);
       })
       .catch((err) => console.log(err));
-  }, []);
+  }, [sub]);
 
   return (
     <>
