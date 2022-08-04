@@ -1,27 +1,16 @@
-import  Axios  from "axios";
-import React, { useEffect, useState } from "react";
-import Popular from "../../components/home/mainContent/popular/Popular";
+import React from "react";
 import Hero from "../../components/moleculs/Hero";
+import PopularPolitics from "../../components/moleculs/PopularPolitics";
 
 import "./styles.css";
 
 const Politics = () => {
-  const [data, setData] = useState({});
-  useEffect(() => {
-    Axios.get("https://api-berita-indonesia.vercel.app/antara/politik/")
-      .then((res) => {
-        const fetchData = res?.data?.data?.posts;
-        setData(fetchData);
-        console.log(fetchData);
-      })
-      .catch((err) => console.log(err));
-  }, []);
   return (
     <>
       <Hero />
       <div className="container">
         <section className="mainContent">
-          <Popular data={data}  category="Politik"/>
+          <PopularPolitics />
         </section>
       </div>
     </>
