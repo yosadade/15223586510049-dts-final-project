@@ -1,7 +1,7 @@
 import React from "react"
 import { Link } from "react-router-dom"
 
-const Card = ({ item: { id, cover, catgeory, title, authorName, time } }) => {
+const Card = ({ item: { id, cover, title, authorName, time } }) => {
   return (
     <>
       <div className='box'>
