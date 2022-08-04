@@ -1,7 +1,6 @@
 import React from "react";
 import Popular from "../../components/home/mainContent/popular/Popular";
 import Hero from "../../components/moleculs/Hero";
-import PopularPolitics from "../../components/moleculs/PopularPolitics";
 
 import "./styles.css";
 
