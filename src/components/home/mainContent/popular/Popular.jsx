@@ -8,7 +8,7 @@ import Label from "../../../atoms/Label"
 import Axios  from "axios"
 
 
-const Popular = ({category, label}) => {
+const Popular = ({category, label, sub = 'terbaru'}) => {
   const [data, setData] = useState();
 
   const settings = {
@@ -34,7 +34,7 @@ const Popular = ({category, label}) => {
 
 
   useEffect(() => {
-    Axios.get("https://api-berita-indonesia.vercel.app/antara/terbaru/")
+    Axios.get(`https://api-berita-indonesia.vercel.app/antara/${sub}/`)
       .then((res) => {
         const fetchData = res?.data?.data?.posts;
         setData(fetchData);

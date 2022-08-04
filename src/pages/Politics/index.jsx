@@ -10,7 +10,7 @@ const Politics = () => {
       <Hero />
       <div className="container">
         <section className="mainContent">
-          <Popular category="Politik" label="Politik" />
+          <Popular category="Politik" label="Politik" sub="politik" />
         </section>
       </div>
     </>

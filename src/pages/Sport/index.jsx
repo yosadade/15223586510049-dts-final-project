@@ -21,7 +21,7 @@ const Sport = () => {
       <Hero />
       <div className="container">
         <section className="mainContent">
-          <Popular data={data} category="Olahraga" label="Olahraga"/>
+          <Popular data={data} category="Olahraga" label="Olahraga" sub="olahraga"/>
         </section>
       </div>
     </>
