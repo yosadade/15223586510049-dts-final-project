@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { onHandleSignUpWithEmailAndPassword } from "../../authentication/firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "../../authentication/firebase";
@@ -19,10 +19,7 @@ const SignUp = () => {
 
   const onHandleSignUp = async () => {
     await onHandleSignUpWithEmailAndPassword(email, password);
-  };
-
-  const onSignIn = () => {
-    navigate("/signin");
+    navigate("/");
   };
 
   useEffect(() => {
@@ -92,9 +89,9 @@ const SignUp = () => {
           <div className="form-link">
             <span>
               Already have an account?{" "}
-              <a href="*" className="link signup-link" onClick={onSignIn}>
+              <Link className="" to="/signin">
                 Signin
-              </a>
+              </Link>
             </span>
           </div>
         </div>

@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from "react";
 import { onHandleSignInWithEmailAndPassword } from "../../authentication/firebase";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "../../authentication/firebase";
 import "./styles.css";
@@ -19,9 +19,6 @@ const SignIn = () => {
     onHandleSignInWithEmailAndPassword(email, password);
   };
 
-  const onHandleSignUp = () => {
-    navigate("/signup");
-  };
 
   useEffect(() => {
     if (user) {
@@ -69,21 +66,12 @@ const SignIn = () => {
           <div className="form-link">
             <span>
               Don't have an account?{" "}
-              <a href="*" className="link signup-link" onClick={onHandleSignUp}>
+              <Link to="/signup">
                 Signup
-              </a>
+              </Link>
             </span>
           </div>
         </div>
-
-        {/* <div className="line"></div> */}
-
-        {/* <div className="media-options">
-          <a href="#" className="field google">
-            <img src="images/google.png" alt="" className="google-img" />
-            <span>Login with Google</span>
-          </a>
-        </div> */}
       </div>
     </div>
   );
