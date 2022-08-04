@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { onHandleSignUpWithEmailAndPassword } from "../../authentication/firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
-import { auth } from "../authentication/firebase";
+import { auth } from "../../authentication/firebase";
 import "./styles.css";
 
 const SignUp = () => {
