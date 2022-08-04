@@ -1,22 +1,27 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Hero from "../../components/moleculs/Hero";
-import Life from "../../components/home/mainContent/life/Life";
-import Music from "../../components/home/mainContent/musics/Music";
 import Popular from "../../components/home/mainContent/popular/Popular";
-import Ppost from "../../components/home/mainContent/Ppost/Ppost";
+import Axios from "axios";
 
 import "./styles.css";
 
 const Sport = () => {
+  const [data, setData] = useState({});
+  useEffect(() => {
+    Axios.get("https://api-berita-indonesia.vercel.app/antara/olahraga/")
+      .then((res) => {
+        const fetchData = res.data.data.posts;
+        setData(fetchData);
+        console.log(fetchData);
+      })
+      .catch((err) => console.log(err));
+  }, []);
   return (
     <>
       <Hero />
       <div className="container">
         <section className="mainContent">
-          <Popular />
-          <Ppost />
-          <Life />
-          <Music />
+          <Popular data={data} category="Olahraga" />
         </section>
       </div>
     </>

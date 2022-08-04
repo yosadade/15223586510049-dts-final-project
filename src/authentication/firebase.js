@@ -15,16 +15,16 @@ import { useNavigate } from "react-router-dom";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyDmcwrtfu1xmKNf6I1uQ9Tf_3Q58p2Jo2I",
-  authDomain: "seputar-jogja.firebaseapp.com",
-  projectId: "seputar-jogja",
-  storageBucket: "seputar-jogja.appspot.com",
-  messagingSenderId: "1090760864681",
-  appId: "1:1090760864681:web:6d9fb98a299d1cba7f4ab8",
+  apiKey: "AIzaSyAol_47COTXUQSbF5Cj3FQUudCpUu-LqHo",
+  authDomain: "movies-web-app-rea2a-dts2022.firebaseapp.com",
+  projectId: "movies-web-app-rea2a-dts2022",
+  storageBucket: "movies-web-app-rea2a-dts2022.appspot.com",
+  messagingSenderId: "673680651918",
+  appId: "1:673680651918:web:1433c31c49ad22b6e5fbdf",
 };
 
 // Initialize Firebase
-export const app = initializeApp(firebaseConfig);
+const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
 const onHandleSignUpWithEmailAndPassword = async (email, password) => {
@@ -55,14 +55,12 @@ const onHandleSignUpWithEmailAndPassword = async (email, password) => {
 
 const onHandleSignInWithEmailAndPassword = async (email, password) => {
   await signInWithEmailAndPassword(auth, email, password)
-    .then((res) => {
-      console.log(res);
+    .then(() => {
       const navigate = useNavigate();
       navigate("/");
     })
     .catch((error) => {
       const errorCode = error.code;
-      console.log(errorCode);
 
       if (errorCode === "auth/wrong-password") {
         Swal.fire({

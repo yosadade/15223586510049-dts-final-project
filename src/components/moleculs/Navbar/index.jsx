@@ -18,10 +18,10 @@ const Navbar = () => {
                 <Link to="/">Home</Link>
               </li>
               <li>
-                <Link to="/culinary">Kuliner</Link>
+                <Link to="/politics">Politik</Link>
               </li>
               <li>
-                <Link to="/tour">Wisata</Link>
+                <Link to="/lifestyle">Lifestyle</Link>
               </li>
               <li>
                 <Link to="/sport">Olahraga</Link>

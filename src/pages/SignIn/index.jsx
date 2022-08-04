@@ -56,21 +56,21 @@ const SignIn = () => {
           <div className="form-link">
             <span>
               Don't have an account?{" "}
-              <a href="#" className="link signup-link" onClick={onHandleSignUp}>
+              <a href="*" className="link signup-link" onClick={onHandleSignUp}>
                 Signup
               </a>
             </span>
           </div>
         </div>
 
-        <div className="line"></div>
+        {/* <div className="line"></div> */}
 
-        <div className="media-options">
+        {/* <div className="media-options">
           <a href="#" className="field google">
             <img src="images/google.png" alt="" className="google-img" />
             <span>Login with Google</span>
           </a>
-        </div>
+        </div> */}
       </div>
     </div>
   );

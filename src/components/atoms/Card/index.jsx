@@ -9,7 +9,7 @@ const Card = ({ item: { id, cover, catgeory, title, authorName, time } }) => {
           <img src={cover} alt='' />
         </div>
         <div className='text'>
-          <span className='category'>{catgeory}</span>
+          <span className='category'>Terbaru</span>
           {/*<h1 className='titleBg'>{title}</h1>*/}
           <Link to={`/SinglePage/${id}`}>
             <h1 className='titleBg'>{title}</h1>

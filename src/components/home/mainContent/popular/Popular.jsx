@@ -4,11 +4,10 @@ import "./Popular.css"
 import Slider from "react-slick"
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
-import { popular } from "../../../../dummyData"
 import Label from "../../../atoms/Label"
 
 
-const Popular = () => {
+const Popular = ({data, category}) => {
   const settings = {
     className: "center",
     centerMode: false,
@@ -35,27 +34,22 @@ const Popular = () => {
         <Label title='Popular' />
         <div className='content'>
           <Slider {...settings}>
-            {popular.map((val) => {
+            {data?.map((val) => {
               return (
-                <div className='items' onClick={() => console.log(val)}>
+                <div className='items' key={val?.title} onClick={() => console.log(val)}>
                   <div className='box shadow'>
                     <div className='images row'>
                       <div className='img'>
-                        <img src={val.cover} alt='' />
+                        <img src={val?.thumbnail} alt='' />
                       </div>
                       <div class='category category1'>
-                        <span>{val.catgeory}</span>
+                        <span>{category}</span>
                       </div>
                     </div>
                     <div className='text row'>
-                      <h1 className='title'>{val.title.slice(0, 40)}...</h1>
+                      <h1 className='titles'>{val?.title.slice(0, 40)}...</h1>
                       <div className='date'>
-                        <i class='fas fa-calendar-days'></i>
-                        <label>{val.date}</label>
-                      </div>
-                      <div className='comment'>
-                        <i class='fas fa-comments'></i>
-                        <label>{val.comments}</label>
+                        <label>{val?.pubDate}</label>
                       </div>
                     </div>
                   </div>

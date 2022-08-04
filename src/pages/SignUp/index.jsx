@@ -1,9 +1,6 @@
 import React, { useState } from "react";
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
-import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
 import "./styles.css";
-import { app } from "../../authentication/firebase";
 
 const SignUp = () => {
   const [form, setForm] = useState({
@@ -16,31 +13,7 @@ const SignUp = () => {
   const { email, username, phone, password } = form;
   const navigate = useNavigate();
 
-  const onHandleSignUp = async (email, password) => {
-    const auth = getAuth(app);
-    await createUserWithEmailAndPassword(auth, email, password)
-      .then(() => {
-        navigate("/");
-      })
-      .catch((error) => {
-        const errorCode = error.code;
-
-        if (errorCode === "auth/wrong-password") {
-          Swal.fire({
-            icon: "error",
-            title: "Oops...",
-            text: "wrong password!",
-          });
-        }
-        if (errorCode === "auth/user-not-found") {
-          Swal.fire({
-            icon: "error",
-            title: "Oops...",
-            text: "user not found!",
-          });
-        }
-      });
-  };
+  const onHandleSignUp = async (email, password) => {};
 
   const onHandleSignIn = () => {
     navigate("/signin");
@@ -102,7 +75,7 @@ const SignUp = () => {
           <div className="form-link">
             <span>
               Already have an account?{" "}
-              <a href="#" className="link signup-link" onClick={onHandleSignIn}>
+              <a href="*" className="link signup-link" onClick={onHandleSignIn}>
                 Signin
               </a>
             </span>
