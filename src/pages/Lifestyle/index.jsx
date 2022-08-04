@@ -44,7 +44,7 @@ const Lifestyle = () => {
       <Hero />
       <div className="container">
         <section className="mainContent">
-          <Popular data={data} category="Lifestyle" />
+          <Popular data={data} category="Lifestyle" label="Lifestyle" />
         </section>
       </div>
     </>

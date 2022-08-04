@@ -28,7 +28,7 @@ const Home = () => {
       <Hero />
       <div className="container">
         <section className="mainContent">
-          <Popular category="Terbaru" />
+          <Popular category="Terbaru" label="Terbaru" />
         </section>
       </div>
     </>

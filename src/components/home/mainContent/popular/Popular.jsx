@@ -8,7 +8,7 @@ import Label from "../../../atoms/Label"
 import Axios  from "axios"
 
 
-const Popular = ({category}) => {
+const Popular = ({category, label}) => {
   const [data, setData] = useState();
 
   const settings = {
@@ -46,7 +46,7 @@ const Popular = ({category}) => {
   return (
     <>
       <section className='popular'>
-        <Label title='Popular' />
+        <Label title={label} />
         <div className='content'>
           <Slider {...settings}>
             {data?.map((val) => {
