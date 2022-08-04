@@ -36,7 +36,7 @@ const Popular = ({data, category}) => {
           <Slider {...settings}>
             {data?.map((val) => {
               return (
-                <div className='items' key={val?.title} onClick={() => console.log(val)}>
+                <div className='items' key={val.title} onClick={() => console.log(val)}>
                   <div className='box shadow'>
                     <div className='images row'>
                       <div className='img'>

@@ -1,6 +1,8 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import { onHandleSignInWithEmailAndPassword } from "../../authentication/firebase";
 import { useNavigate } from "react-router-dom";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { auth } from "../../authentication/firebase";
 import "./styles.css";
 
 const SignIn = () => {
@@ -10,7 +12,7 @@ const SignIn = () => {
   });
 
   const {email, password} = form
-
+  const [user, loading] = useAuthState(auth);
   const navigate = useNavigate();
 
   const onHandleSignIn = () => {
@@ -20,6 +22,17 @@ const SignIn = () => {
   const onHandleSignUp = () => {
     navigate("/signup");
   };
+
+  useEffect(() => {
+    if (user) {
+      navigate("/");
+      return;
+    }
+  }, [navigate, user]);
+
+  if (loading) {
+    return;
+  }
 
   return (
     <div className="containers forms">

@@ -1,5 +1,8 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { onHandleSignUpWithEmailAndPassword } from "../../authentication/firebase";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { auth } from "../authentication/firebase";
 import "./styles.css";
 
 const SignUp = () => {
@@ -11,13 +14,27 @@ const SignUp = () => {
   });
 
   const { email, username, phone, password } = form;
+  const [user, loading] = useAuthState(auth);
   const navigate = useNavigate();
 
-  const onHandleSignUp = async (email, password) => {};
+  const onHandleSignUp = async () => {
+    await onHandleSignUpWithEmailAndPassword(email, password);
+  };
 
-  const onHandleSignIn = () => {
+  const onSignIn = () => {
     navigate("/signin");
   };
+
+  useEffect(() => {
+    if (user) {
+      navigate("/");
+      return;
+    }
+  }, [navigate, user]);
+
+  if (loading) {
+    return;
+  }
 
   return (
     <div className="containers forms">
@@ -75,7 +92,7 @@ const SignUp = () => {
           <div className="form-link">
             <span>
               Already have an account?{" "}
-              <a href="*" className="link signup-link" onClick={onHandleSignIn}>
+              <a href="*" className="link signup-link" onClick={onSignIn}>
                 Signin
               </a>
             </span>

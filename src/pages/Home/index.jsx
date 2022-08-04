@@ -10,7 +10,7 @@ const Home = () => {
   useEffect(() => {
     Axios.get("https://api-berita-indonesia.vercel.app/antara/terbaru/")
       .then((res) => {
-        const fetchData = res.data.data.posts;
+        const fetchData = res?.data?.data?.posts;
         setData(fetchData);
         console.log(fetchData);
       })

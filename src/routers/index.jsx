@@ -10,12 +10,16 @@ import Footer from "../components/moleculs/Footer";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "../components/moleculs/Navbar";
 import Head from "../components/moleculs/Head";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { auth } from "../authentication/firebase";
 
 const Routers = () => {
+  const [user] = useAuthState(auth);
+  console.log(user);
   return (
     <BrowserRouter>
-      <Head />
-      <Navbar />
+      {user && <Head />}
+      {user && <Navbar />}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/signup" element={<SignUp />} />
@@ -26,7 +30,7 @@ const Routers = () => {
         <Route path="/tour" element={<Tour />} />
         <Route path="/sport" element={<Sport />} />
       </Routes>
-      <Footer />
+      {user && <Footer />}
     </BrowserRouter>
   );
 };
