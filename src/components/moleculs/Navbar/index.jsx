@@ -1,9 +1,17 @@
 import React, { useState } from "react";
 import "./styles.css";
 import { Link } from "react-router-dom";
+import { onHandleSignOut } from "../../../authentication/firebase";
+import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
   const [navbar, setNavbar] = useState(false);
+  const navigate = useNavigate();
+
+  const logoutHandler = async () => {
+    await onHandleSignOut();
+    navigate("/signin");
+  }
 
   return (
     <>
@@ -26,14 +34,10 @@ const Navbar = () => {
               <li>
                 <Link to="/sport">Olahraga</Link>
               </li>
-            </ul>
-            <button className="barIcon" onClick={() => setNavbar(!navbar)}>
-              {navbar ? (
-                <i className="fa fa-times"></i>
-              ) : (
-                <i className="fa fa-bars"></i>
-              )}
-            </button>
+              <li style={{marginLeft: 'auto'}} onClick={logoutHandler}>
+                Logout
+              </li>
+            </ul>          
           </nav>
         </div>
       </header>

@@ -39,8 +39,8 @@ const SignIn = () => {
       <div className="form login">
         <div className="form-content">
           <div className="wrapperTitle">
-            <h1 className="title">Seputar</h1>
-            <h1 className="title2">Jogja</h1>
+            <h1 className="title">Antara</h1>
+            <h1 className="title2">News</h1>
           </div>
           <form action="#">
             <div className="field input-field">
