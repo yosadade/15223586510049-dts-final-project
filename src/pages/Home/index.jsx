@@ -4,9 +4,9 @@ import { useNavigate } from "react-router-dom";
 
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "../../authentication/firebase";
+import Popular from "../../components/home/mainContent/popular/Popular";
 
 import "./styles.css";
-import PopularHome from "../../components/moleculs/PopularHome";
 
 const Home = () => {
   const [user, loading] = useAuthState(auth);
@@ -28,7 +28,7 @@ const Home = () => {
       <Hero />
       <div className="container">
         <section className="mainContent">
-          <PopularHome />
+          <Popular category="Terbaru" />
         </section>
       </div>
     </>
