@@ -13,8 +13,8 @@ import Head from "../components/moleculs/Head";
 const Routers = () => {
   return (
     <BrowserRouter>
-      {/* {/* <Head /> */}
-      <Navbar />
+      {/* <Head />
+      {/* <Navbar /> */}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/signup" element={<SignUp />} />
