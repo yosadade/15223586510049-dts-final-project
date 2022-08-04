@@ -51,7 +51,7 @@ const Popular = ({category, label, sub = 'terbaru'}) => {
           <Slider {...settings}>
             {data?.map((val) => {
               return (
-                <div className='items' key={val?.title} onClick={() => console.log(val)}>
+                <div className='items' key={val?.title} onClick={() => window.location.replace(val.link)}>
                   <div className='box shadow'>
                     <div className='images row'>
                       <div className='img'>
