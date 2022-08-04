@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react"
-import "./styles.css"
+import "./PopularHome.css"
 
 import Slider from "react-slick"
 import "slick-carousel/slick/slick.css"
