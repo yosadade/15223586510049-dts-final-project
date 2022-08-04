@@ -21,7 +21,7 @@ const Home = () => {
       <Hero />
       <div className="container">
         <section className="mainContent">
-          <Popular data={data} category="Terbaru" />
+          {/* <Popular data={data} category="Terbaru" /> */}
         </section>
       </div>
     </>

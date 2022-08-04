@@ -21,7 +21,7 @@ const Politics = () => {
       <Hero />
       <div className="container">
         <section className="mainContent">
-          <Popular data={data}  category="Politik"/>
+          {/* <Popular data={data}  category="Politik"/> */}
         </section>
       </div>
     </>

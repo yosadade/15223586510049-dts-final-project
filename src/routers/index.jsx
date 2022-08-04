@@ -2,7 +2,6 @@ import React from "react";
 import Home from "../pages/Home";
 import Politics from "../pages/Politics";
 import Lifestyle from "../pages/Lifestyle";
-import Tour from "../pages/Tour";
 import Sport from "../pages/Sport";
 import SignUp from "../pages/SignUp";
 import SignIn from "../pages/SignIn";
@@ -27,7 +26,6 @@ const Routers = () => {
         {/* <Route path="/singlepage/:id" exact element={SinglePage} /> */}
         <Route path="/politics" element={<Politics />} />
         <Route path="/lifestyle" element={<Lifestyle />} />
-        <Route path="/tour" element={<Tour />} />
         <Route path="/sport" element={<Sport />} />
       </Routes>
       {user && <Footer />}
