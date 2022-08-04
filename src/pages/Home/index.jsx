@@ -40,7 +40,7 @@ const Home = () => {
       <Hero />
       <div className="container">
         <section className="mainContent">
-          <Popular data={data} category="Terbaru" />
+          <Popular category="Terbaru" />
         </section>
       </div>
     </>

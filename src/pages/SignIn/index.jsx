@@ -15,8 +15,9 @@ const SignIn = () => {
   const [user, loading] = useAuthState(auth);
   const navigate = useNavigate();
 
-  const onHandleSignIn = () => {
-    onHandleSignInWithEmailAndPassword(email, password);
+  const onHandleSignIn = async () => {
+    await onHandleSignInWithEmailAndPassword(email, password);
+    navigate("/");
   };
 
 

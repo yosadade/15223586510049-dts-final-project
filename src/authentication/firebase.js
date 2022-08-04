@@ -55,7 +55,8 @@ const onHandleSignUpWithEmailAndPassword = async (email, password) => {
 
 const onHandleSignInWithEmailAndPassword = async (email, password) => {
   await signInWithEmailAndPassword(auth, email, password)
-    .then(() => {
+    .then((res) => {
+      console.log(res);
       const navigate = useNavigate();
       navigate("/");
     })

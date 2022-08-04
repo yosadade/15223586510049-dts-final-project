@@ -1,13 +1,16 @@
-import React from "react"
+import React, { useEffect, useState } from "react"
 import "./Popular.css"
 
 import Slider from "react-slick"
 import "slick-carousel/slick/slick.css"
 import "slick-carousel/slick/slick-theme.css"
 import Label from "../../../atoms/Label"
+import Axios  from "axios"
 
 
-const Popular = ({data, category}) => {
+const Popular = ({category}) => {
+  const [data, setData] = useState();
+
   const settings = {
     className: "center",
     centerMode: false,
@@ -28,6 +31,18 @@ const Popular = ({data, category}) => {
       },
     ],
   }
+
+
+  useEffect(() => {
+    Axios.get("https://api-berita-indonesia.vercel.app/antara/terbaru/")
+      .then((res) => {
+        const fetchData = res?.data?.data?.posts;
+        setData(fetchData);
+        console.log(fetchData);
+      })
+      .catch((err) => console.log(err));
+  }, []);
+
   return (
     <>
       <section className='popular'>
@@ -36,7 +51,7 @@ const Popular = ({data, category}) => {
           <Slider {...settings}>
             {data?.map((val) => {
               return (
-                <div className='items' key={val.title} onClick={() => console.log(val)}>
+                <div className='items' key={val?.title} onClick={() => console.log(val)}>
                   <div className='box shadow'>
                     <div className='images row'>
                       <div className='img'>
